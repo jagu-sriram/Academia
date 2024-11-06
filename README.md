@@ -1,6 +1,6 @@
-# CollegeERP
+# Academia
 
-**CollegeERP** is a comprehensive Java EE-based application designed to streamline academic administration processes in a college or university. This system includes role-based functionalities for managing faculty, courses, and student registrations. It provides separate features for admins to manage faculty-course mappings, student enrollments, and other academic operations.
+**Academia** is a comprehensive Java EE-based application designed to streamline academic administration processes in a college or university. This system includes role-based functionalities for managing faculty, courses, and student registrations. It provides separate features for admins to manage faculty-course mappings, student enrollments, and other academic operations.
 
 ## Features
 
@@ -31,9 +31,9 @@
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/yourusername/CollegeERP.git
+   git clone https://github.com/yourusername/Academia.git
 2. **Configure Database**:
-   - Set up a MySQL database for `CollegeERP` (e.g., create an empty database named `collegeerp`).
+   - Set up a MySQL database for `Academia` (e.g., create an empty database named `collegeerp`).
    - Update the database connection details in the application's configuration file (e.g., `persistence.xml`).
    - JPA will handle table creation automatically based on entity definitions when the application starts, as long as `hibernate.hbm2ddl.auto` is set to `update` or `create`.
 3. **Build the Project**:
@@ -43,7 +43,7 @@
      ```
 
 4. **Deploy on Application Server**:
-   - Deploy the `CollegeERP` application on a Java EE-compatible server (e.g., JBoss,Glassfish,etc..).
+   - Deploy the `Academia` application on a Java EE-compatible server (e.g., JBoss,Glassfish,etc..).
 
 ## Usage
 
