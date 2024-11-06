@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+<h:body>
+    <h3>Student Login</h3>
+    <center>
+        <h:form>
+            <h:panelGrid columns="1" cellpadding="5">
+                <h:outputLabel for="email" value="Enter Email"/>
+                <h:inputText id="email" validatorMessage="Enter Email properly" value="#{studentbean.email}">
+                    <f:validateLength maximum="50"/>
+                </h:inputText>
+                <h:message for="email"/>
+
+                <h:outputLabel for="password" value="Enter Password"/>
+                <h:inputSecret id="password" validatorMessage="Password length must be in between 5 and 50" value="#{studentbean.password}">
+                    <f:validateLength minimum="5" maximum="30"/>
+                </h:inputSecret>
+                <h:message for="password"/>
+
+                <h:outputLabel for="login"/>
+                <h:commandButton id="login" value="Login" action="#{studentbean.validatestudentlogin()}"/>
+                <h:message for="login"/>
+            </h:panelGrid>
+        </h:form>
+    </center>
+</h:body>
+</html>

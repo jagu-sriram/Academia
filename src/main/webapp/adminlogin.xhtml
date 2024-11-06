@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head>
+    <title>Admin Login</title>
+</h:head>
+<h:body>
+    <h3>Admin Login</h3>
+    <center>
+        <h:form>
+            <h:panelGrid columns="1" cellpadding="5">
+                <h:outputLabel for="username" value="Enter Username"/>
+                <h:inputText id="username" validatorMessage="Username length must be in between 5 and 30" value="#{adminbean.username}">
+                    <f:validateLength minimum="5" maximum="30"/>
+                </h:inputText>
+                <h:message for="username"/>
+
+                <h:outputLabel for="password" value="Enter Password"/>
+                <h:inputSecret id="password" validatorMessage="Password length must be in between 5 and 30" value="#{adminbean.password}">
+                    <f:validateLength minimum="5" maximum="30"/>
+                </h:inputSecret>
+                <h:message for="password"/>
+
+                <h:outputLabel for="login"/>
+                <h:commandButton id="login" value="Login" action="#{adminbean.validateadminlogin()}"/>
+                <h:message for="login"/>
+            </h:panelGrid>
+        </h:form>
+    </center>
+</h:body>
+</html>

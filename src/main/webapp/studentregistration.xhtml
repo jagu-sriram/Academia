@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head>
+<title>Student Registration</title>
+</h:head> 
+<body> 
+<h3>Register Student</h3>
+<center>
+	<h:form>
+	<h:panelGrid columns="3" cellpadding="5">
+		<h:outputLabel for="id" value="Enter ID"/>
+		<h:inputText id="id" required="true" requiredMessage="Enter ID" value="#{adminbean.student.id}" />
+		<h:message for="id" style="color:red"/>
+		<h:outputLabel for="name" value="Enter Name"/>
+		<h:inputText id="name" required="true" requiredMessage="Enter Name" value="#{adminbean.student.name}"/>
+		<h:message for="name" style="color:red"/>
+		<h:outputLabel for="gender" value="Enter Gender"/>
+		<h:selectOneRadio id="gender" required="true" requiredMessage="Select Gender" value="#{adminbean.student.gender}">
+			<f:selectItem itemLabel="Male" itemValue="MALE"/>
+			<f:selectItem itemLabel="Female" itemValue="FEMALE"/>
+			<f:selectItem itemLabel="Others" itemValue="OTHERS"/>
+		</h:selectOneRadio>
+		<h:message for="gender" style="color:red"/>
+		<h:outputLabel for="age" value="Enter Age"/>
+		<h:inputText id="age" required="true" requiredMessage="Enter Name" validatorMessage="Enter valid Age(less than 120)" value="#{adminbean.student.age}">
+			 <f:validateLongRange maximum="120" />
+		</h:inputText>
+		<h:message for="age" style="color:red"/>
+		<h:outputLabel for="department" value="Select Department"/>
+		<h:selectOneMenu id="department" required="true" requiredMessage="Select Department" value="#{adminbean.student.department}">
+			<f:selectItem itemLabel="--Select--" itemValue=""/>
+			<f:selectItem itemLabel="CSE" itemValue="CSE"/>
+			<f:selectItem itemLabel="ECE" itemValue="ECE"/>
+			<f:selectItem itemLabel="Mechanical" itemValue="Mechanical"/>
+			<f:selectItem itemLabel="EEE" itemValue="EEE"/>
+		</h:selectOneMenu>
+		<h:message for="department" style="color:red"/>
+		<h:outputLabel for="email" value="Enter Email"/>
+		<h:inputText id="email" required="true" requiredMessage="Enter Email" value="#{adminbean.student.email}"/>
+		<h:message for="email" style="color:red"/>
+		<h:outputLabel for="password" value="Enter Password"/>
+		<h:inputSecret id="password" required="true" requiredMessage="Enter Password" value="#{adminbean.student.password}"/>
+		<h:message for="password" style="color:red"/>
+		<h:outputLabel for="add"/>
+		<h:commandButton value="Register" action="#{adminbean.addstudent()}" />
+		<h:message for="add"/>
+	</h:panelGrid>
+	</h:form>
+</center>
+
+</body> 
+</html>
